@@ -52,7 +52,7 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
         Docket docket = new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.sky.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.sky.controller")) //指定需要生成文档的Controller所在的包路径
                 .paths(PathSelectors.any())
                 .build();
         return docket;
