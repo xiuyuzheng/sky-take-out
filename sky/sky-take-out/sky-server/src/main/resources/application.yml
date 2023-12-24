@@ -2,8 +2,10 @@ server:
   port: 8080
 
 spring:
+  #加载名为 "application-dev.yml的配置文件中的配置项
   profiles:
     active: dev
+  #允许循环依赖,即在Spring容器中允许出现循环引用的情况
   main:
     allow-circular-references: true
   datasource:
@@ -14,7 +16,7 @@ spring:
       password: ${sky.datasource.password}
 
 mybatis:
-  #mapper配置文件
+  #扫描mapper配置文件
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.sky.entity
   configuration:
